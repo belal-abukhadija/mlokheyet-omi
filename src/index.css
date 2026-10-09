@@ -83,7 +83,7 @@
 
   /* Keep anchored sections clear of the sticky header */
   section[id] {
-    scroll-margin-top: 6rem;
+    scroll-margin-top: 7.5rem;
   }
 
   :focus-visible {

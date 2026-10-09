@@ -22,7 +22,7 @@ export default function Footer() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center text-center">
         <div className="md:text-start">
-          <img src="/logo.jpg" alt={t('brand')} width="96" height="96" className="w-24 h-24 mix-blend-multiply mx-auto md:mx-0" />
+          <img src="/logo.jpg" alt={t('brand')} width="126" height="126" className="w-32 h-32 mix-blend-multiply mx-auto md:mx-0" />
           <p className="opacity-80">{t('footerMotto')}</p>
         </div>
 
