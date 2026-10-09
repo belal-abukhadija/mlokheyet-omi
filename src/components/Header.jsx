@@ -16,10 +16,7 @@ export default function Header() {
     <header className="sticky top-0 z-40 bg-bg-paper border-b-2 border-dashed border-fg-text/30">
       <div className="px-5 md:px-6 py-3 flex justify-between items-center gap-4 w-full max-w-6xl mx-auto">
         <a href="#top" className="flex items-center gap-2 shrink-0" aria-label={t('brand')}>
-          <img src="/logo.jpg" alt="" width="56" height="56" className="w-14 h-14 mix-blend-multiply" />
-          <span className="font-heading font-bold text-xl text-brand-green hidden min-[420px]:inline">
-            {t('brand')}
-          </span>
+          <img src="/logo.jpg" alt="" width="64" height="64" className="w-16 h-16 mix-blend-multiply" />
         </a>
 
         <nav className="hidden md:flex items-center gap-8 font-bold text-lg">

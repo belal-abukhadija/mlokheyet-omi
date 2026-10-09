@@ -34,20 +34,28 @@ function MenuRow({ item, large }) {
 
   return (
     <li className="flex items-center gap-3 py-3">
-      <div className="flex-1 min-w-0 flex flex-col sm:flex-row sm:items-baseline gap-x-3">
-        <span className={`min-w-0 font-bold leading-relaxed ${large ? 'text-xl' : 'text-lg'}`}>
+      {/* Phones: name on its own line, then price and badge. Wider screens: one line with a dotted leader. */}
+      <div className="flex-1 min-w-0 flex flex-wrap sm:flex-nowrap items-center sm:items-baseline gap-x-3 gap-y-1">
+        <span className={`w-full sm:w-auto min-w-0 font-bold leading-relaxed ${large ? 'text-xl' : 'text-lg'}`}>
           {name}
-          {item.bestSeller && (
-            <span className="inline-block ms-3 align-middle bg-accent-yellow border-2 border-fg-text px-2 py-0.5 text-sm font-bold -rotate-2 wobbly-2">
-              {t('bestSeller')}
-            </span>
-          )}
         </span>
+        {item.bestSeller && (
+          <span className="order-last sm:order-none shrink-0 whitespace-nowrap sm:self-center bg-accent-yellow border-2 border-fg-text px-2 py-0.5 text-sm font-bold -rotate-2 wobbly-2">
+            {t('bestSeller')}
+          </span>
+        )}
         <span className="leader hidden sm:block" aria-hidden="true"></span>
-        <span className="whitespace-nowrap shrink-0">
-          <span className={`font-heading font-bold ${large ? 'text-2xl' : 'text-xl'}`}>{amount}</span>{' '}
-          <span className="opacity-80">{unit}</span>
-        </span>
+        {item.price === 0 ? (
+          <span className="whitespace-nowrap shrink-0 flex items-center gap-2">
+            <span className="bg-brand-green text-bg-paper border-2 border-fg-text px-3 py-0.5 font-heading font-bold wobbly-1">{amount}</span>
+            <span className="opacity-80">{unit}</span>
+          </span>
+        ) : (
+          <span className="whitespace-nowrap shrink-0">
+            <span className={`font-heading font-bold ${large ? 'text-2xl' : 'text-xl'}`}>{amount}</span>{' '}
+            <span className="opacity-80">{unit}</span>
+          </span>
+        )}
       </div>
       {item.price > 0 ? <Stepper item={item} name={name} /> : <span className="w-10 shrink-0" aria-hidden="true"></span>}
     </li>
