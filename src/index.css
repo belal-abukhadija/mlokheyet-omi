@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: 'Lemonada', cursive;
+  --font-body: 'Tajawal', sans-serif;
+
+  --color-bg-paper: #fdfbf7;
+  --color-fg-text: #2d2d2d;
+  --color-brand-green: #579019;
+  --color-deep-green: #24400b;
+  --color-accent-yellow: #ffb300;
+  --color-muted-paper: #e5e0d8;
+  --color-clay: #b4552d;
+}
+
+@layer utilities {
+  .wobbly-1 {
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  }
+  .wobbly-2 {
+    border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
+  }
+  .wobbly-3 {
+    border-radius: 225px 15px 255px 15px / 15px 255px 15px 225px;
+  }
+
+  .shadow-solid {
+    box-shadow: 4px 4px 0px 0px var(--color-brand-green);
+  }
+  .shadow-solid-hover {
+    box-shadow: 2px 2px 0px 0px var(--color-brand-green);
+    transform: translate(2px, 2px);
+  }
+
+  /* Dotted line between a menu item and its price */
+  .leader {
+    flex: 1 1 1.5rem;
+    min-width: 1.5rem;
+    align-self: flex-end;
+    margin-bottom: 0.45em;
+    border-bottom: 3px dotted color-mix(in srgb, var(--color-fg-text) 35%, transparent);
+  }
+
+  .steam path {
+    animation: steam 4.5s ease-in-out infinite;
+  }
+  .steam path:nth-child(2) {
+    animation-delay: -1.5s;
+  }
+  .steam path:nth-child(3) {
+    animation-delay: -3s;
+  }
+}
+
+@keyframes steam {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  40% {
+    opacity: 0.55;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg-paper text-fg-text font-body;
+    background-image: radial-gradient(var(--color-muted-paper) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold;
+  }
+
+  /* Keep anchored sections clear of the sticky header */
+  section[id] {
+    scroll-margin-top: 6rem;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-accent-yellow);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    .steam path {
+      animation: none;
+      opacity: 0.4;
+    }
+    * {
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
