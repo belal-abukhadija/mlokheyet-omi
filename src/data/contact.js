@@ -15,3 +15,9 @@ export const FACEBOOK_URL = 'https://www.facebook.com/share/1TCLeJRReG/';
 
 export const whatsappUrl = (text) =>
   `https://wa.me/${PHONE_INTL}?text=${encodeURIComponent(text)}`;
+
+// Delivery apps the restaurant is listed on. Paste each restaurant page link into `url` to make the label a link.
+export const DELIVERY_APPS = [
+  { id: 'talabat', nameAr: 'طلبات', nameEn: 'Talabat', url: '' },
+  { id: 'careem', nameAr: 'كريم', nameEn: 'Careem', url: '' },
+];

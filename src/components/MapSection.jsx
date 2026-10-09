@@ -1,5 +1,6 @@
 import React from 'react';
-import { MapPin, Phone, Bike, Navigation } from 'lucide-react';
+import { MapPin, Phone, Navigation } from 'lucide-react';
+import DeliveryApps from './DeliveryApps';
 import { useLanguage } from '../LanguageContext';
 import { MAP_EMBED_URL, DIRECTIONS_URL, TEL_URL, PHONE_DISPLAY } from '../data/contact';
 
@@ -51,10 +52,7 @@ export default function MapSection() {
             </div>
           </div>
 
-          <p className="flex items-center gap-4 text-xl font-bold">
-            <Bike size={26} className="text-brand-green shrink-0" aria-hidden="true" />
-            {t('delivery')}
-          </p>
+          <DeliveryApps className="text-xl" />
 
           <a
             href={DIRECTIONS_URL}

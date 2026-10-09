@@ -1,6 +1,7 @@
 import { useLanguage } from '../LanguageContext';
 import React from 'react';
-import { MapPin, Bike, Phone } from 'lucide-react';
+import { MapPin, Phone } from 'lucide-react';
+import DeliveryApps from './DeliveryApps';
 import { TEL_URL } from '../data/contact';
 
 // Hand-drawn clay bowl of molokhia with a lemon and a green chili on the side
@@ -73,14 +74,13 @@ export default function HeroSection() {
           </a>
         </div>
 
-        <ul className="mt-10 flex flex-wrap gap-x-8 gap-y-3 justify-center md:justify-start text-lg font-bold">
+        <ul className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 justify-center md:justify-start text-lg font-bold">
           <li className="flex items-center gap-2">
             <MapPin size={20} className="text-brand-green" aria-hidden="true" />
             {t('heroArea')}
           </li>
-          <li className="flex items-center gap-2">
-            <Bike size={20} className="text-brand-green" aria-hidden="true" />
-            {t('delivery')}
+          <li>
+            <DeliveryApps />
           </li>
         </ul>
       </div>

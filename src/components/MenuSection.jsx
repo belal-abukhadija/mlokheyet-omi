@@ -3,6 +3,7 @@ import { useOrder } from '../OrderContext';
 import React from 'react';
 import { Plus, Minus } from 'lucide-react';
 import { DISHES, ADD_ONS, formatPrice } from '../data/menu';
+import DeliveryApps from './DeliveryApps';
 
 function Stepper({ item, name }) {
   const { t } = useLanguage();
@@ -76,6 +77,7 @@ export default function MenuSection() {
           </svg>
         </h2>
         <p className="text-lg md:text-xl opacity-80 mt-8">{t('menuHint')}</p>
+        <DeliveryApps className="justify-center text-lg mt-4" />
       </div>
 
       <div className="grid lg:grid-cols-[1.5fr_1fr] gap-10 lg:gap-12 items-start">
