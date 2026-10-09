@@ -36,7 +36,7 @@ function MenuRow({ item, large }) {
     <li className="flex items-center gap-3 py-3">
       {/* Phones: name on its own line, then price and badge. Wider screens: one line with a dotted leader. */}
       <div className="flex-1 min-w-0 flex flex-wrap sm:flex-nowrap items-center sm:items-baseline gap-x-3 gap-y-1">
-        <span className={`w-full sm:w-auto min-w-0 font-bold leading-relaxed ${large ? 'text-xl' : 'text-lg'}`}>
+        <span className={`w-full sm:w-auto min-w-0 font-bold leading-relaxed ${large ? 'text-xl' : 'text-lg'} ${item.price === 0 ? 'sm:whitespace-nowrap sm:shrink-0' : ''}`}>
           {name}
         </span>
         {item.bestSeller && (
@@ -57,7 +57,8 @@ function MenuRow({ item, large }) {
           </span>
         )}
       </div>
-      {item.price > 0 ? <Stepper item={item} name={name} /> : <span className="w-10 shrink-0" aria-hidden="true"></span>}
+      {/* Free items can't be ordered, so their price label uses the stepper's space */}
+      {item.price > 0 && <Stepper item={item} name={name} />}
     </li>
   );
 }

@@ -92,13 +92,13 @@ export default function HeroSection() {
         </div>
 
         {/* Taped photo of the real dish */}
-        <figure className="absolute -bottom-10 right-0 md:-right-6 w-36 md:w-40 bg-white border-2 border-fg-text p-2 pb-1 shadow-[4px_4px_0px_#579019] transform -rotate-6">
+        <figure className="absolute -bottom-10 right-0 md:-right-6 w-40 md:w-52 bg-white border-2 border-fg-text p-2 pb-1 shadow-[4px_4px_0px_#579019] transform -rotate-6">
           <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-16 h-7 bg-muted-paper/90 border border-fg-text rotate-3 wobbly-1" aria-hidden="true"></div>
           <img
-            src="/menu/58e3fff4-6866-4174-aab7-f7aba8c29158.webp"
+            src="/gallery/09.webp"
             alt={t('heroPhotoCaption')}
-            width="172"
-            height="172"
+            width="900"
+            height="1125"
             className="w-full aspect-square object-cover border border-fg-text/40"
           />
           <figcaption className="font-heading text-xs text-center py-2">{t('heroPhotoCaption')}</figcaption>

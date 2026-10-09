@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import MenuSection from './components/MenuSection';
+import GallerySection from './components/GallerySection';
 import AboutSection from './components/AboutSection';
 import MapSection from './components/MapSection';
 import ReviewSection from './components/ReviewSection';
@@ -21,6 +22,7 @@ function App() {
             <div className="max-w-6xl w-full mx-auto px-5 md:px-6">
               <HeroSection />
               <MenuSection />
+              <GallerySection />
             </div>
             <AboutSection />
             <div className="max-w-6xl w-full mx-auto px-5 md:px-6">

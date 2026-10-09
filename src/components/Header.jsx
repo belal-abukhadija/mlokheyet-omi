@@ -8,6 +8,7 @@ export default function Header() {
 
   const links = [
     { href: '#menu', label: t('navMenu') },
+    { href: '#gallery', label: t('navGallery') },
     { href: '#story', label: t('navStory') },
     { href: '#visit', label: t('navVisit') },
   ];
